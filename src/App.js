@@ -1,8 +1,15 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom"; // Replace Switch with Routes
-import { Layout } from "antd";
+import { Layout, Typography, Space } from "antd";
 // import "antd/dist/antd.css";
-import { Navbar, Homepage } from "./components/index.tsx";
+import {
+  Navbar,
+  Homepage,
+  Exchanges,
+  Cryptocurrencies,
+  CryptoDetails,
+  News,
+} from "./components/index.tsx";
 import "./App.css";
 
 const App = () => {
@@ -14,25 +21,33 @@ const App = () => {
       {/* main section */}
       <div className="main">
         <Layout>
-          {/* left section */}
           <div className="routes">
             <Routes>
-              <Route path="/" element={<Homepage />} /> {/* Use element prop instead */}
-              {/* <Route path="/exchanges" element={<Exchanges />} />
-              <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
-              <Route path="/crypto/:coinId" element={<CryptoDetails />} /> */}
-            </Routes>
-          </div>
-          {/* right section */}
-          <div className="routes">
-            {/* You can optionally put Routes here if you have right section routes */}
-            <Routes>
-              {/* <Route path="/news" element={<News />} /> */}
+              <Route exact path="/" element={<Homepage />} />
+              <Route exact path="/exchanges" element={<Exchanges />} />
+              <Route exact path="/cryptocurrencies" element={<Cryptocurrencies />} />
+              <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />
+              {/* News */}
+              <Route exact path="/news" element={<News />} />
             </Routes>
           </div>
         </Layout>
+        <div className="footer">
+          <Typography.Title
+            level={5}
+            style={{ color: "white", textAlign: "center" }}
+          >
+            Copyright © 2021
+            <Link to="/">Cryptoverse Inc.</Link> <br />
+            All Rights Reserved.
+          </Typography.Title>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/exchanges">Exchanges</Link>
+            <Link to="/news">News</Link>
+          </Space>
+        </div>
       </div>
-      <div className="footer"></div>
     </div>
   );
 };

@@ -18,17 +18,17 @@ const items: MenuProps["items"] = [
     key: "home",
   },
   {
-    label: <Link to="/">Cryptocurrencies</Link>,
+    label: <Link to="/cryptocurrencies">Cryptocurrencies</Link>,
     icon: <FundOutlined />,
     key: "cryptocurrencies",
   },
   {
-    label: <Link to="/">Exchanges</Link>,
+    label: <Link to="/exchanges">Exchanges</Link>,
     icon: <MoneyCollectOutlined />,
     key: "exchanges",
   },
   {
-    label: <Link to="/">News</Link>,
+    label: <Link to="/news">News</Link>,
     icon: <BulbOutlined />,
     key: "news",
   },
@@ -42,13 +42,11 @@ const Navbar = () => (
         <Link to="/">Cryptoverse</Link>
       </Typography.Title>
 
-      <Button className="menu-control-container">
+      {/* <Button className="menu-control-container">
         <MenuOutlined />
-      </Button>
-
-      <Menu mode="vertical" theme="dark" items={items} />
-
+      </Button> */}
     </div>
+    <Menu mode="vertical" theme="dark" items={items} />
   </div>
 );
 export default Navbar;
