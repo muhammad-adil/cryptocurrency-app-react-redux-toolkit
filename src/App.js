@@ -19,25 +19,36 @@ const App = () => {
         <Navbar />
       </div>
       {/* main section */}
-      <div className="main">
-        <Layout>
-          <div className="routes">
-            <Routes>
-              <Route exact path="/" element={<Homepage />} />
-              <Route exact path="/exchanges" element={<Exchanges />} />
-              <Route exact path="/cryptocurrencies" element={<Cryptocurrencies />} />
-              <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />
-              {/* News */}
-              <Route exact path="/news" element={<News />} />
-            </Routes>
-          </div>
-        </Layout>
+      <div className="main-wrapper">
+        <div className="main">
+          <Layout>
+            <div className="routes">
+              <Routes>
+                <Route exact path="/" element={<Homepage />} />
+                <Route exact path="/exchanges" element={<Exchanges />} />
+                <Route
+                  exact
+                  path="/cryptocurrencies"
+                  element={<Cryptocurrencies />}
+                />
+                <Route
+                  exact
+                  path="/crypto/:coinId"
+                  element={<CryptoDetails />}
+                />
+                {/* News */}
+                <Route exact path="/news" element={<News />} />
+              </Routes>
+            </div>
+          </Layout>
+        </div>
+
         <div className="footer">
           <Typography.Title
             level={5}
             style={{ color: "white", textAlign: "center" }}
           >
-            Copyright © 2021
+            Copyright © 2024
             <Link to="/">Cryptoverse Inc.</Link> <br />
             All Rights Reserved.
           </Typography.Title>
