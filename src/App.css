@@ -345,9 +345,11 @@ a:hover {
   gap: 50px;
   color: #0071bd;
 }
-.chart-title {
+
+/* .chart-title {
   color: #0071bd !important;
-}
+} */
+
 .price-container {
   display: flex !important;
   gap: 20px !important;
